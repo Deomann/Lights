@@ -42,7 +42,7 @@ RgbColor green = RgbColor(0, 255, 0);
 RgbColor white = RgbColor(255);
 RgbColor black = RgbColor(0);
 
-NeoPixelBus<NeoGrbFeature, NeoEsp8266UartWs2813Method>* _pGrb = NULL;
+NeoPixelBus<NeoGrbFeature, NeoEsp8266Uart0Ws2813Method>* _pGrb = NULL;
 
 void convertHue(uint8_t light)
 {
@@ -534,7 +534,7 @@ void ChangeNeoPixels(uint16_t newCount)
   if (_pGrb != NULL) {
     delete _pGrb; // delete the previous dynamically created strip
   }
-  _pGrb = new NeoPixelBus<NeoGrbFeature, NeoEsp8266UartWs2813Method>(newCount); // and recreate with new count
+  _pGrb = new NeoPixelBus<NeoGrbFeature, NeoEsp8266Uart0Ws2813Method>(newCount); // and recreate with new count
   _pGrb->Begin();
 }
 
